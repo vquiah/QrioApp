@@ -1,0 +1,30 @@
+<!-- include header -->
+<%- include('partials/_header') %>
+<!-- /include header -->
+<section class="current_subject">
+    <h2 class="subject_name">Subject Name: <%= subject.subjFullName%></h2>
+
+    <div class="subject_info">
+      <img  width="200" height="200" src="<%= subject.subjPic%>">
+      <ul class="row list-unstyled">
+        <li>Full Name: <%= subject.subjFullName%></li>
+        <li> Date of Birth: <%= subject.dob%></li>
+        <li>Status: <%= subject.status%></li>
+        <li>Subject ID Number: <%= subject.subjsubjectNum%></li>
+        <li> Telephone Number: <%= subject.telephone%></li>
+        <li>Email Address: <%= subject.email%></li>
+        <li>Home Address: <%= subject.subjHomeAdress%></li>
+     </ul>
+          
+    </div>
+    <div class="current_subject">
+      <a href="/dashboard" class="current_subject_return"><button class="btn btn-secondary">Return to Dashboard</button></a>
+      <a href="/subject/:id/update_subject_page" class="current_subject_update"><button class="btn btn-secondary">Edit Subject Information</button></a>
+  </div>
+</section>
+
+
+
+<!-- include footer -->
+<%- include('partials/_footer') %>
+<!-- /include footer -->

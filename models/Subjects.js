@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const SubjectsSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-    },
+        ref: "User",
+      },
     subjPic: {
         type: String,
         require: false
@@ -13,7 +13,7 @@ const SubjectsSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    subjstudyNum: {
+    subjStudyNum: {
         type: Number,
         require: false,
     },

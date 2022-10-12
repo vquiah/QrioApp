@@ -8,14 +8,18 @@ const MongoStore = require("connect-mongo");
 const connectDB = require("./config/database");
 const mainRoutes = require('./routes/main');
 const authRoutes = require('./routes/auth');
+const dashboardRoutes = require('./routes/dashboard');
 const subjectsRoutes = require('./routes/subjects');
+const subjectPageRoutes = require('./routes/subject');
+// const todosRoutes = require('./routes/todos');
+
 //Use .env file in config folder
 require('dotenv').config({path: './config/.env'})
 // Passport
 require('./config/passport')(passport)
 //Connect To Database
-connectDB();
-
+connectDB(); 
+ 
 //Using EJS for views
 app.set("view engine", "ejs")
 //Static Folder
@@ -42,7 +46,12 @@ app.use(logger("dev"))
 //*Routes
 app.use('/', mainRoutes)
 app.use('/auth', authRoutes)
+app.use('/dashboard', dashboardRoutes)
 app.use('/subjects', subjectsRoutes)
+app.use('/subject', subjectPageRoutes)
+// app.use('/todos', todosRoutes) 
+
+
 
 
 

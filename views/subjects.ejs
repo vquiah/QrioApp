@@ -2,21 +2,56 @@
 <%- include('partials/_header') %>
 <!-- /include header -->
 <section class="current_study">
-    <h2 class="current_study_title">afaf85456</h2>
+    <h2 class="current_study_title">Study Name: afaf85456</h2>
     <div class="current_study_addNew">
-        <a href="/subjects/add-subject" class="current_study_addNew_subject"><button> Add New</button></a>
+        <a href="/subjects/add-subject" class="current_study_addNew_subject"> <button type="submit" class="btnn">Add New Subject</button></a>
+        <a href="/dashboard" class="current_study_return"> <button type="submit" class="btnn">Return to Dashboard</button></a>
     </div>
     <div class="current_study_info">
-        <ul >
-            <li>Principal Investigator : Dr. Important </li>
-            <li>Lead Staff : Ashton Sam </li>
-            <li>Primary Monitor : Sam John </li>
-            <li>Total Subjects Enrolled : 5 </li>
-            <li>Total Subjects Screening: 7</li>
-            <li>Total Subjects Screen Failed: 4</li> 
-            <li>Total subjects Dropped/Lost to Follow Up: 0 </li>   
-        </ul>
-    </div>
+      <ul >
+          <li>Principal Investigator : Dr. Important </li>
+          <li>Lead Staff : Ashton Sam </li>
+          <li>Primary Monitor : Sam John </li>
+          <li>Total Subjects Enrolled : 5 </li>
+          <li>Total Subjects Screening: 7</li>
+          <li>Total Subjects Screen Failed: 4</li> 
+          <li>Total subjects Dropped/Lost to Follow Up: 0 </li>   
+      </ul>
+  </div>
+  <br>
+    <div class="">
+        <div class="">
+            <ul class="row list-unstyled">
+                <% for(let i=0; i <subjects.length; i++) {%>
+                  <li>
+                    <a href="/subject/<%= subjects[i]._id%>">
+                      <img  width="500" height="600" class="img-fluid" src="<%= subjects[i].subjPic%>">
+                    </a>
+                  </li>
+                  <li>
+                    Full Name: <%= subjects[i].subjFullName%>
+                  </li>
+                  <li>
+                    Date of Birth: <%= subjects[i].dob%>
+                  </li>
+                  <li>
+                    Status: <%= subjects[i].status%>
+                  </li>
+                  <li>
+                    Subject ID Number: <%= subjects[i].subjStudyNum%>
+                  </li>
+                  <li>
+                    Telephone Number: <%= subjects[i].telephone%>
+                  </li>
+                  <li>
+                    Email Address: <%= subjects[i].email%>
+                  </li>
+                <% } %>
+                </ul>
+                
+        </div>
+      </div>
+ 
 </section>
 <section class="current_study_divider">
     <input type="text" placeholder="Search">
@@ -26,16 +61,18 @@
 <section class="current_study_enrolled">
     <h3>Enrolled</h3>
     <div class="current_study_card">
-        <div class="current_study_img">
-            <img src="" alt="">
-        </div>
-        <div class="current_study_subject_info">
-            <h4>Full Name:</h4>
-            <h4>Date of Birth:</h4>
-            <h4>Subject ID</h4>
-            <h4>Telephone Number</h4>
-            <h4>Email Address:</h4>
-        </div>
+      <div class="current_study_img">
+          <img src="" alt="">
+      </div>
+      <div class="current_study_subject_info">
+          <h4>Full Name:</h4>
+          <h4>Date of Birth:</h4>
+          <h4>Subject ID</h4>
+          <h4>Telephone Number</h4>
+          <h4>Email Address:</h4>
+      </div>
+  </div>
+        
     </div>
 </section>
 <section class="current_study_screening">
@@ -55,7 +92,7 @@
     </div>
 </section>
 <section class="current_study_completed"> 
-    <h3>COpleted Study</h3>
+    <h3>Completed Study</h3>
 
     <div class="current_study_card">
         <div class="current_study_img">

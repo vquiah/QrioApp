@@ -5,15 +5,16 @@ const upload = require("../middleware/multer");
 const subjectsController = require('../controllers/subjects');
 
 
+
 //* Main Routes
-// @desc studies
+// @desc get all subject page
 // @route GET /subjects
 router.get('/', subjectsController.getSubjects);
-// @desc studies
+// @desc get to new subject form
 // @route GET /subjects/add-subject
 router.get('/add-subject', subjectsController.getNewSubjectPage)
 // @desc create new subject
-// @route GET /subjects/createSubject
+// @route POST /subjects/createSubject
 router.post('/createSubject', upload.single("file"), subjectsController.createSubject);
 
 module.exports = router

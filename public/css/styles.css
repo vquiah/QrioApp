@@ -1,24 +1,101 @@
-:root{
-    --dark: #2b2d42;
-    --light: #adb5bd;
-    --border: #dee2e6;
-    --border-btn: #edf2f4;
-}
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.section{
+:root {
+    --main-color: rgb(31, 181, 31);
+  }
+  /* gloabl  */
+  main{
+    width: 80vw;
+    margin: auto;
+  }
+.btnn{
+    background-color: var(--main-color);
+    border-radius: 15px;
+    padding: 5px;
+}
+.btnn:hover{
+    background-color: green;
+}
+/* home page */
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    background: blue;
+    height: 70vh;
+    background-image: url(../imgs/qrio-hbg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
 }
+.home, .login{
+    text-align: center;
+    padding-bottom: 90px;
+}
+.home p{
+   font-size: 15px;
+   margin-bottom: 25px;
+}
+/* Login Page  */
 
 
-/* ========================================================= */
+/* dashboard page  */
+section{
+    border: 1px red solid;
+    display: grid;
+    grid-template-columns: auto;
+    padding: 20px;
 
+}
+.daily_task{
+    display: flex;
+}
+.subject_info{
+    width: 60%;
+}
+.todoList li{
+    border: 1px rgb(8, 6, 37) solid;
+    margin: 5px 15px;
+    padding:0 10px;
+    border-radius: 20px;
+    
+}
+.add-todos{
+    margin-left: 40px;
+    text-align: center;
+    height: 100%;
+    width: 40%;
+}
+.add-todos-l{
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+    
+}
+input{
+    border: 1px rgb(8, 6, 37) solid;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+.study_cards-s{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.study_cards{
+    border: 1px rgb(8, 6, 37) solid;
+    width: 300px;
+    padding: 10px;
+    border-radius: 25px;
+    background: greenyellow;
+    line-height: 1.5em;
+
+
+}
+/* subjects page  */
+.current_study{
+    display: flex;
+    flex-direction: column;
+}
