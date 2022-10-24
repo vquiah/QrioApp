@@ -16,17 +16,7 @@ module.exports = {
     },
   getNewSubjectPage:(req, res) => {
       res.render("add-subject.ejs");
-    }, 
-  getSubjectUpdatePage:async  (req, res) => {
-    try {
-      const subjectInfo = await Subjects.find()
-      res.render("update_subject_page.ejs", {
-        subjectInfo: subjectInfo
-      })
-    } catch (error) {
-      console.log(err)
-    } 
-  },
+    },
   getSubjectPage: async (req, res) => {
       try{
         const subject = await Subjects.findById(req.params.id);
@@ -37,7 +27,18 @@ module.exports = {
       }catch(err){
         console.log(err)
       }
-    },
+    }, 
+  getSubjectUpdatePage:async  (req, res) => {
+    try {
+      const subjectInfo = await Subjects.find();
+      res.render("update_subject_page.ejs", {
+        subjectInfo: subjectInfo
+      })
+    } catch (error) {
+      console.log(err)
+    } 
+  },
+  
   createSubject: async(req, res) => {
     try{
       // Upload image to cloudinary
