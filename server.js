@@ -14,7 +14,7 @@ const subjectPageRoutes = require('./routes/subject');
 // const todosRoutes = require('./routes/todos');
 
 //Use .env file in config folder
-require('dotenv').config({path: './config/.env'})
+require('dotenv').config({path: '.env'})
 // Passport
 require('./config/passport')(passport)
 //Connect To Database
@@ -49,7 +49,7 @@ app.use('/auth', authRoutes)
 app.use('/dashboard', dashboardRoutes)
 app.use('/subjects', subjectsRoutes)
 app.use('/subject', subjectPageRoutes)
-// app.use('/todos', todosRoutes) 
+// app.use('/todos', todosRoutes)  
 
 
 

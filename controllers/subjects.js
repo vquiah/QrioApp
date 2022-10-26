@@ -28,13 +28,15 @@ module.exports = {
         console.log(err)
       }
     }, 
-  getSubjectUpdatePage:async  (req, res) => {
+  getSubjectUpdatePage:async (req, res) => {
     try {
-      const subjectInfo = await Subjects.find();
+      const subjectInfo = await Subjects.findOne({
+        id: req.params.id
+      }).lean()
       res.render("update_subject_page.ejs", {
         subjectInfo: subjectInfo
       })
-    } catch (error) {
+    } catch (err) {
       console.log(err)
     } 
   },
@@ -67,12 +69,23 @@ module.exports = {
       console.log(err);
       }
     },
-    updateSubjectInfor:async (req, res) => {
+    updateSubjectInfo:async (req, res) => {
+      const { id,subjFullName, status, gender, dob, telephone, email, subjHomeAdress } = req.body
       try {
-        await Subject.findOneAndUpdate(
-          { _id: req.params.id }
-        );
-        res.redirect(`subject/:id/update_subject_page`);
+        const subinfo = await Subject.findById(id).exec()
+
+        subinfo.subjFullName = name
+        subinfo.status -status
+        subinfo.gender = gender
+        subinfo.dob = 
+
+
+        // (
+        //   { id: req.params.id }, req.body, {
+        //     new: true,
+        //     // runValidators: true,
+        // })
+        // res.redirect(`/subject/${req.params.id}`);
       } catch (err) {
         console.log(err);
       }
