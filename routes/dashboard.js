@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 const dashboardController = require('../controllers/dashboard');
-const todosController = require('../controllers/todos');
+
 
 
 //* Main Routes
@@ -10,8 +10,12 @@ const todosController = require('../controllers/todos');
 // @route GET /dashboard
 router.get('/', dashboardController.getDashbaord)
 
+
+
 // @desc create todo items
-// @route POST /todos
-router.post('/createTodos', todosController.createTodos)
+// @route POST /dashboard/createTodos
+router.post('/createTodos', dashboardController.createTodos)
+router.delete('/deleteTodos/:id', dashboardController.deleteTodos)
+
 
 module.exports = router

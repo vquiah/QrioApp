@@ -8,17 +8,22 @@
     <div class="subject_info">
         <h2 class="subject_name">Daily To-Do List</h2>
         <ul class="todoList">
-            <li>list item</li>
-            <li>list item</li>
-            <li>list item</li>
-            <li>list item</li>
-            <li>list item</li>
-            <li>list item</li>
-            <li>list item</li>
+            <% for(let i=0; i<todos.length; i++) {%>
+                <li >
+                    <h2><%= todos[i].todoItem%></h2>
+                    <form
+                    action="/dashboard/deleteTodos/<%= todos._id %>?_method=DELETE"
+                    method="POST"
+                    class="col-3"
+                  >
+                    <button class="btn " type="submit"></button>
+                  </form>
+                </li>
+                <% } %>        
         </ul>     
     </div>
     <div class="add-todos">
-        <form action="todos/createTodos" method="POST" >
+        <form action="/dashboard/createTodos" method="POST" >
             <div class="add-todos-l">
                 <label for="listItem">Add A Task</label>
                 <input type="textarea" id="listItem" name="todoItem" placeholder="Add your task here">

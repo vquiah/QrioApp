@@ -15,4 +15,5 @@ router.get('/:id', subjectsController.getSubjectPage);
 router.get('/update_subject_page/:id', subjectsController.getSubjectUpdatePage); 
 // router.put('/update_subject_page/:id', subjectsController.updateSubjectInfor); 
 router.put('/update_subject/:id', subjectsController.updateSubjectInfo); 
+
 module.exports = router 

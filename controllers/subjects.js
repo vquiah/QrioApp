@@ -70,22 +70,11 @@ module.exports = {
       }
     },
     updateSubjectInfo:async (req, res) => {
-      const { id,subjFullName, status, gender, dob, telephone, email, subjHomeAdress } = req.body
       try {
-        const subinfo = await Subject.findById(id).exec()
+        const subj = await Subjects.findById(req.params.id);
+        await subj.updateOne({$set: req.body});
+        res.redirect(`/subject/${req.params.id}`)
 
-        subinfo.subjFullName = name
-        subinfo.status -status
-        subinfo.gender = gender
-        subinfo.dob = 
-
-
-        // (
-        //   { id: req.params.id }, req.body, {
-        //     new: true,
-        //     // runValidators: true,
-        // })
-        // res.redirect(`/subject/${req.params.id}`);
       } catch (err) {
         console.log(err);
       }
